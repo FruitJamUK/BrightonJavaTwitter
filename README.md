@@ -5,9 +5,9 @@ Example Android application that will display a users Twitter stream
 
 This Step:
 
-Parse the retrieved result into domain objects we can use
+Show the Tweets domain object in the activity
 
-- Take the ASyncTask string result
-- Create a new Parser
-- Return a list of tweets
-- Use onPostExecute to notify UI thread
+- create the layout for the activity
+- create an adapter to use
+- display on screen
+- add an empty view
