@@ -2,8 +2,11 @@ package com.blundell.twitter;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 
-public class MainActivity extends Activity {
+import java.util.List;
+
+public class MainActivity extends Activity implements GetTweetsTask.OnGotTweetsListener {
     /**
      * Called when the activity is first created.
      */
@@ -12,7 +15,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new GetTweetsTask().execute("Brighton Java");
+        new GetTweetsTask(this).execute("Brighton Java");
+    }
 
+    @Override
+    public void onGotTweets(List<Tweet> tweets) {
+        for (Tweet tweet : tweets) {
+            Log.d("TEST", tweet.toString());
+        }
     }
 }

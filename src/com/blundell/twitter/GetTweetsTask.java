@@ -1,11 +1,11 @@
 package com.blundell.twitter;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,8 +16,19 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 public class GetTweetsTask extends AsyncTask<String, Void, List<Tweet>> {
 
+    private final OnGotTweetsListener listener;
+
+    public interface OnGotTweetsListener {
+        void onGotTweets(List<Tweet> tweets);
+    }
+
+    public GetTweetsTask(OnGotTweetsListener listener) {
+        this.listener = listener;
+    }
+
     @Override
     protected List<Tweet> doInBackground(String... params) {
+        List<Tweet> tweets = new ArrayList<Tweet>();
         try {
             String searchQuery = URLEncoder.encode(params[0], "UTF-8");
             HttpGet get = new HttpGet("https://twitter.com/search?q=" + searchQuery);
@@ -25,20 +36,17 @@ public class GetTweetsTask extends AsyncTask<String, Void, List<Tweet>> {
             HttpResponse response = client.execute(get);
             String content = convert(response.getEntity().getContent());
 
-            SpeedHelper.debugTestPrintFirstTweet(content);
-            SpeedHelper.debugTestPrintFirstTweetUsername(content);
-
-            List<Tweet> tweets = SpeedHelper.parseTweets(content);
-
-            for (Tweet tweet : tweets) {
-                Log.d("TEST", tweet.toString());
-            }
-
+            tweets = SpeedHelper.parseTweets(content);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return tweets;
+    }
 
-        return null;
+    @Override
+    protected void onPostExecute(List<Tweet> tweets) {
+        super.onPostExecute(tweets);
+        listener.onGotTweets(tweets);
     }
 
     private String convert(InputStream stream) {
