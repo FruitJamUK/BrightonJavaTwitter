@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">Brighton Java Twitter</string>
-  <string name="label_activity_main">Main Activity</string>
+  <string name="label_activity_main">Twitter Search</string>
   <string name="hello_world">Hello Brighton Java</string>
 </resources>
