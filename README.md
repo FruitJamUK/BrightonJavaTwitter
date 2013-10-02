@@ -5,11 +5,8 @@ Example Android application that will display a users Twitter stream
 
 This Step:
 
-Retrieve the result of a Twitter Search
+Parse the retrieved result into domain objects we can use
 
-- Create an ASyncTask
-- Call it to take a search parameter
-- Create an HttpGet
-- Execute Get will fail - add internet permission
-- Retrieve result
-- Print out the html
+- Take the ASyncTask string result
+- Create a new Parser
+- Return a list of tweets
