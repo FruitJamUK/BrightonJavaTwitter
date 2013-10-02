@@ -2,11 +2,15 @@ package com.blundell.twitter;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.List;
 
 public class MainActivity extends Activity implements GetTweetsTask.OnGotTweetsListener {
+
+    private ListView listView;
+
     /**
      * Called when the activity is first created.
      */
@@ -16,12 +20,12 @@ public class MainActivity extends Activity implements GetTweetsTask.OnGotTweetsL
         setContentView(R.layout.activity_main);
 
         new GetTweetsTask(this).execute("Brighton Java");
+
+        listView = (ListView) findViewById(R.id.main_list_view);
     }
 
     @Override
     public void onGotTweets(List<Tweet> tweets) {
-        for (Tweet tweet : tweets) {
-            Log.d("TEST", tweet.toString());
-        }
+        listView.setAdapter(new ArrayAdapter<Tweet>(this, android.R.layout.simple_list_item_1, android.R.id.text1, tweets));
     }
 }
