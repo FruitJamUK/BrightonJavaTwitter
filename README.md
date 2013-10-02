@@ -5,9 +5,10 @@ Example Android application that will display a users Twitter stream
 
 This Step:
 
-Show the Tweets domain object in the activity
+Use fragments to allow support for multiple screen sizes
 
-- create the layout for the activity
-- create an adapter to use
-- display on screen
-- add an empty view
+- create parallel fragment & layout
+- move code to the fragment
+- change activity layout to fragment
+- add rotation fix for losing data
+- add click through and a second fragment
