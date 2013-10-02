@@ -1,6 +1,7 @@
 package com.blundell.twitter;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,6 +27,12 @@ public class GetTweetsTask extends AsyncTask<String, Void, List<Tweet>> {
 
             SpeedHelper.debugTestPrintFirstTweet(content);
             SpeedHelper.debugTestPrintFirstTweetUsername(content);
+
+            List<Tweet> tweets = SpeedHelper.parseTweets(content);
+
+            for (Tweet tweet : tweets) {
+                Log.d("TEST", tweet.toString());
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
