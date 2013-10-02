@@ -36,7 +36,7 @@ public class GetTweetsTask extends AsyncTask<String, Void, List<Tweet>> {
             HttpResponse response = client.execute(get);
             String content = convert(response.getEntity().getContent());
 
-            tweets = SpeedHelper.parseTweets(content);
+            tweets.addAll(SpeedHelper.parseTweets(content));
         } catch (IOException e) {
             e.printStackTrace();
         }
