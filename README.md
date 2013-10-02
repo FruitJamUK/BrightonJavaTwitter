@@ -1,7 +1,7 @@
 BrightonJavaTwitter
 ===================
 
-Example Android application that will display a users Twitter stream
+Example Android application that will display the results of a Twitter search
 
 This Step:
 
