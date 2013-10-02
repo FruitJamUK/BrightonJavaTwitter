@@ -11,3 +11,4 @@ Show the Tweets domain object in the activity
 - create an adapter to use
 - display on screen
 - add an empty view
+- Save the activity state
