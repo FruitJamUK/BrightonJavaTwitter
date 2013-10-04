@@ -17,7 +17,11 @@ public class MainActivity extends Activity implements TweetListFragment.OnTweetC
 
     @Override
     public void onTweetClicked(Tweet tweet) {
-        Intent intent = new Intent(this, TweetDetailsActivity.class);
-        startActivity(intent);
+        if (getResources().getBoolean(R.bool.tablet_7_inch)) {
+
+        } else {
+            Intent intent = new Intent(this, TweetDetailsActivity.class);
+            startActivity(intent);
+        }
     }
 }
