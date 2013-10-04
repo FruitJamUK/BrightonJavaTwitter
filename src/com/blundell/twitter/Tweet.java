@@ -1,9 +1,6 @@
 package com.blundell.twitter;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-public class Tweet implements Parcelable {
+public class Tweet {
     private final String username;
     private final String content;
 
@@ -25,34 +22,4 @@ public class Tweet implements Parcelable {
         return username + " : " + content;
     }
 
-    // Parceleable
-
-    public Tweet(Parcel in) {
-        String[] data = new String[2];
-        in.readStringArray(data);
-        this.username = data[0];
-        this.content = data[1];
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeStringArray(new String[]{this.username, this.content});
-    }
-
-    public static final Creator<Tweet> CREATOR = new Creator<Tweet>() {
-        @Override
-        public Tweet createFromParcel(Parcel source) {
-            return new Tweet(source);
-        }
-
-        @Override
-        public Tweet[] newArray(int size) {
-            return new Tweet[size];
-        }
-    };
 }
