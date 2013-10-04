@@ -21,5 +21,8 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <activity
+      android:name=".TweetDetailsActivity"
+      android:label="@string/label_activity_tweet_details" />
   </application>
 </manifest>

@@ -3,4 +3,6 @@
   <string name="app_name">Brighton Java Twitter</string>
   <string name="label_activity_main">Twitter Search</string>
   <string name="hello_world">Hello Brighton Java</string>
+  <string name="stub_tweet_details">This is the tweet details</string>
+  <string name="label_activity_tweet_details">Tweet Details</string>
 </resources>
