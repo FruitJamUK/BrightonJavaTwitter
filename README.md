@@ -5,10 +5,9 @@ Example Android application that will display the results of a Twitter search
 
 This Step:
 
-Use fragments to allow support for multiple screen sizes
+Implement multiple screen & orientation support using resource buckets
 
-- create parallel fragment & layout
-- move code to the fragment
-- change activity layout to fragment
-- add rotation fix for losing data
-- add click through and a second fragment
+- differentiate between phones and tablets
+- create alternative layouts
+- move fragments about for reuse
+- treat landscape and portrait differently
