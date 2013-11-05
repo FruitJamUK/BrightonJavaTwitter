@@ -11,3 +11,7 @@ Parse the retrieved result into domain objects we can use
 - Create a new Parser
 - Return a list of tweets
 - Use onPostExecute to notify UI thread
+
+Slides:
+
+http://www.slideshare.net/PaulBlundell2/brighton-java-twitter-android-handson-27938896
