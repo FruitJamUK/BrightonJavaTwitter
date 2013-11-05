@@ -12,3 +12,7 @@ Show the Tweets domain object in the activity
 - display on screen
 - add an empty view
 - Save the activity state
+
+Slides:
+
+http://www.slideshare.net/PaulBlundell2/brighton-java-twitter-android-handson-27938896
