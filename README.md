@@ -8,3 +8,7 @@ Example Android application that will display the results of a Twitter search
 - Step 2 : Parse the retrieved result into domain objects we can use
 - Step 3 ; Show the Tweets domain object in the activity
 - Step 4 : Use fragments to allow support for multiple screen sizes, re-useability
+
+Slides:
+
+http://www.slideshare.net/PaulBlundell2/brighton-java-twitter-android-handson-27938896
