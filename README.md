@@ -12,3 +12,7 @@ Use fragments to allow support for multiple screen sizes
 - change activity layout to fragment
 - add rotation fix for losing data
 - add click through and a second fragment
+
+Slides:
+
+http://www.slideshare.net/PaulBlundell2/brighton-java-twitter-android-handson-27938896
