@@ -13,3 +13,7 @@ Retrieve the result of a Twitter Search
 - Execute Get will fail - add internet permission
 - Retrieve result
 - Print out the html
+
+Slides:
+
+http://www.slideshare.net/PaulBlundell2/brighton-java-twitter-android-handson-27938896
